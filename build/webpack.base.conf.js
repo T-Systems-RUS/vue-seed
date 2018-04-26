@@ -8,6 +8,12 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+// i18n with YAML format support
+vueLoaderConfig.loaders.i18n = '@kazupon/vue-i18n-loader';
+vueLoaderConfig.preLoaders = {
+  i18n: 'yaml-loader'
+};
+
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',

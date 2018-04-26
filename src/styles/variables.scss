@@ -1,8 +1,42 @@
 // Colors
 $magenta: #E20074;
-$magenta-dark: #A00053;
 $white: #FFFFFF;
-$light-black: #262626;
+$black: #000000;
+
+$gray-38: #262626;
+$gray-178: #B2B2B2;
+$gray-199: #C7C7C7;
+$gray-220: #DCDCDC;
+$gray-237: #EDEDED;
+$gray-248: #F8F8F8;
+$gray-56: #383838;
+$gray-117: #757575;
+$gray-184: #B8B8B8;
+$gray-194: #C2C2C2;
+$gray-230: #E6E6E6;
+
+$magenta-dark: #A00053;
+$magenta-208: #D0006B;
+$magenta-188: #BC0060;
+$magenta-140: #8C0048;
+$magenta-238: #EE7DB7;
+
+$red: #D90000;
+$red-251: #FBE6E6;
+$red-253: #FDF2F2;
+
+$green: #6BB324;
+
+$blue: #00A0DE;
+$dark-blue: #007FAF;
+$dark-blue-121: #005879;
+
+
+$red-217: #D90000;
+$red-a10: #6BB324;
+$red-a05: #FDF2F2;
+
+$building-unit: 12px;
 
 // Font sizes
 $small-font-size: 15px;
@@ -10,6 +44,40 @@ $base-font-size: 18px;
 
 // Header
 $header-bar-height: 82px;
+$footer-bar-height: 66px;
 $header-height: $header-bar-height * 2;
+$header-bar-padding: 2 * $building-unit $building-unit;
 
 $telekom-radius: 4px;
+
+//Pages
+$page-padding: $building-unit * 5 $building-unit $building-unit * 7.5;
+$page-padding-mobile: $building-unit * 4 $building-unit $building-unit * 6;
+
+$main-page-padding: $building-unit $building-unit $building-unit * 8;
+
+//Forms
+$form-field-width: 312px;
+
+//Transition
+$transition-default: .2s;
+
+//Typography
+//line-heights
+$lh-1: 72px;
+$lh-2: 54px;
+$lh-3: 42px;
+$lh-4: 30px;
+$lh-5: 24px;
+$lh-6: 24px;
+$lh-7: 18px;
+$lh-8: 14px;
+
+//font-weights
+$font-weight-thin: 100;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-ultra: 900;
+
+$container-min-width: 648px;

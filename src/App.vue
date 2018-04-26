@@ -10,12 +10,14 @@
 
 <script lang="ts">
   import Vue from 'vue';
-  import ButtonTest from './components/example/ButtonTest.vue';
+  import Header from './components/Header.vue';
+  import Footer from './components/Footer.vue';
 
   export default Vue.extend({
     name: 'App',
     components: {
-      ButtonTest
+      Header,
+      Footer
     }
   });
 </script>
@@ -23,7 +25,18 @@
 <style lang="scss" scoped>
   @import './styles/variables';
 
-  .view {
-    margin-top: $header-height;
+  // For sticky footer
+  #app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
+
+  .view {
+    // Header margin
+    margin-top: $header-height;
+    // Sticky footer
+    flex: 1;
+  }
+
 </style>

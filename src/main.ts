@@ -8,14 +8,17 @@ import './styles/styles.scss';
 
 import Checkbox from './components/common/Checkbox.vue';
 
+import {i18n} from './i18n';
+
 Vue.component('Checkbox', Checkbox);
 
 Vue.config.productionTip = false;
 
-export const vue = new Vue({
+export const app = new Vue({
   el: '#app',
   store,
   router,
+  i18n,
   components: {App},
   template: '<App/>'
 });

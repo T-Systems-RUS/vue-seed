@@ -2,8 +2,14 @@
 
 // Override bulma defaults
 // Remember to override derived variables from @import '~bulma/sass/utilities/derived-variables.sass';
-@import '~bulma/sass/utilities/initial-variables';
-@import '~bulma/sass/utilities/_all';
+@import '../../node_modules/bulma/sass/utilities/initial-variables';
+@import '../../node_modules/bulma/sass/utilities/all';
+
+//Container
+$container-max-size: 984px;
+$desktop: $container-max-size + (2 * $gap);
+$widescreen: $container-max-size + (2 * $gap);
+$fullhd: $container-max-size + (2 * $gap);
 
 // Fonts
 $family-serif: 'TeleGrotesk Next', serif;
@@ -16,6 +22,9 @@ $colors: map-merge($colors, (
   'primary':($primary, $primary-invert)
 ));
 
+//Links
+$link: $dark-blue;
+
 // Titles
 $title-weight: 200;
 $size-1: 60px;
@@ -23,8 +32,11 @@ $size-2: 48px;
 $size-3: 36px;
 $size-4: 24px;
 $size-5: 21px;
-$size-6: 15px;
-$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7;
+$size-6: 18px;
+$size-7: 15px;
+$size-8: 12px;
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 $size-8;
+$magenta-title-margin-bottom: $building-unit / 2;
 
 // Radius for forms and buttons
 $radius: $telekom-radius;
@@ -33,15 +45,60 @@ $control-radius: $radius;
 // Forms
 $input-shadow: none;
 $label-weight: normal;
+$input-border-color: $gray-178;
+$input-hover-border-color: $gray-178;
+$input-focus-border-color: $blue;
+$input-focus-box-shadow-size: 0 0 6px 0;
+$input-focus-box-shadow-color: rgba($blue, .5);
 
 // Buttons
 $size-large: $size-5;
+$button-padding: $building-unit $building-unit * 2;
+
+
+// Modals
+$modal-z: 110;
 
 // Global bulma base styles
-@import '~bulma/sass/base/all';
+@import '../../node_modules/bulma/sass/base/all';
 
 // Other global bulma imports
-@import '~bulma/sass/elements/container';
-@import '~bulma/sass/elements/title';
-@import '~bulma/sass/elements/button';
-@import '~bulma/sass/elements/form';
+@import '../../node_modules/bulma/sass/elements/container';
+@import '../../node_modules/bulma/sass/elements/title';
+@import '../../node_modules/bulma/sass/elements/button';
+@import '../../node_modules/bulma/sass/elements/form';
+@import '../../node_modules/bulma/sass/elements/tag';
+@import '../../node_modules/bulma/sass/components/dropdown';
+@import '../../node_modules/bulma/sass/grid/columns';
+@import '../../node_modules/bulma/sass/components/modal';
+
+.columns {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &:last-child,
+  &:not(:last-child) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.column {
+  padding: 0 $building-unit;
+}
+
+.button {
+  padding: $button-padding;
+  line-height: 1;
+}
+
+.tags {
+  .tag {
+    margin-bottom: 0;
+  }
+}
+
+.is-clipped {
+  overflow: hidden;
+  height: 100vh;
+}

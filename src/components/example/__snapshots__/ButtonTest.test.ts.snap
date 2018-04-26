@@ -1,6 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ButtonTest should render correct contents 1`] = `
-"Test Button
-  "
-`;

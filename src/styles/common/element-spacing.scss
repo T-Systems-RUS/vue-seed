@@ -1,0 +1,5 @@
+$between-input-group-margin: $building-unit * 3;
+
+.input-group + .input-group  {
+  margin-top: $between-input-group-margin;
+}

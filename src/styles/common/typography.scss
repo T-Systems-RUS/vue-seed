@@ -1,0 +1,58 @@
+$font-list:
+  (
+    lineHeight: $lh-1,
+    fontSize: $size-1,
+    fontWeight: $font-weight-thin
+  )
+  (
+    lineHeight: $lh-2,
+    fontSize: $size-2,
+    fontWeight: $font-weight-thin
+  )
+  (
+    lineHeight: $lh-3,
+    fontSize: $size-3,
+    fontWeight: $font-weight-medium
+  )
+  (
+    lineHeight: $lh-4,
+    fontSize: $size-4,
+    fontWeight: $font-weight-thin
+  )
+  (
+    lineHeight: $lh-5,
+    fontSize: $size-5,
+    fontWeight: $font-weight-medium
+  )
+  (
+    lineHeight: $lh-6,
+    fontSize: $size-6,
+    fontWeight: $font-weight-regular
+  )
+  (
+    lineHeight: $lh-7,
+    fontSize: $size-7,
+    fontWeight: $font-weight-regular
+  )
+  (
+    lineHeight: $lh-8,
+    fontSize: $size-8,
+    fontWeight: $font-weight-regular
+  );
+
+
+@each $font in $font-list {
+  $i: index($font-list, $font);
+  .is-size-#{$i} {
+    line-height: map-get($font, lineHeight);
+    font-size: map-get($font, fontSize);
+    font-weight: map-get($font, fontWeight);
+  }
+}
+
+@mixin font-size($sizeIndex) {
+  $font: nth($font-list, $sizeIndex);
+  line-height: map-get($font, lineHeight);
+  font-size: map-get($font, fontSize);
+  font-weight: map-get($font, fontWeight);
+}

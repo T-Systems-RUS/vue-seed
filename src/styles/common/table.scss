@@ -1,0 +1,110 @@
+$table-border-color: $gray-237;
+$table-head-border-width: 2px;
+$table-border-width: 1px;
+$cell-horizontal-padding: $building-unit;
+$cell-vertical-padding: $building-unit * 1.5;
+$head-cell-vertical-padding: $building-unit;
+$sorting-height: $building-unit;
+$sorting-width: $building-unit / 1.5;
+$sorting-icon-padding: $building-unit / 4;
+$sorting-icon-height: ($sorting-height - $sorting-icon-padding) / 2;
+$table-min-width: $container-min-width;
+$table-max-width: $container-max-size;
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: $building-unit;
+}
+
+.table {
+  display: table;
+  @include font-size(6);
+
+  &.is-small {
+    width: $table-min-width;
+  }
+
+  &.is-big {
+    width: $table-max-width;
+  }
+
+  &-head {
+    display: table-header-group;
+  }
+
+  &-body {
+    display: table-row-group;
+  }
+
+  &-row {
+    display: table-row;
+  }
+
+  &-cell {
+    display: table-cell;
+    border-bottom: $table-border-width solid $table-border-color;
+    padding: $head-cell-vertical-padding $cell-horizontal-padding;
+    text-align: left;
+    vertical-align: middle;
+
+    &.is-head {
+      font-weight: 700;
+      border-bottom: $table-head-border-width solid $table-border-color;
+      padding-top: 0;
+      padding-bottom: $head-cell-vertical-padding;
+      white-space: nowrap;
+    }
+
+    &.is-head.is-sortable {
+      cursor: pointer;
+    }
+  }
+
+  &-sorting {
+    position: relative;
+    width: $sorting-width;
+    height: $sorting-height;
+    display: inline-block;
+    margin-left: $building-unit;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: $sorting-width / 2 solid transparent;
+      border-top: 0;
+      border-bottom: $sorting-icon-height solid $gray-184;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: $sorting-width / 2 solid transparent;
+      border-bottom: 0;
+      border-top: $sorting-icon-height solid $gray-184;
+    }
+
+    &.is-asc {
+      &::before {
+        border-bottom-color: $gray-38;
+      }
+    }
+
+    &.is-desc {
+      &::after {
+        border-top-color: $gray-38;
+      }
+    }
+  }
+
+  .is-overflow-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+  }
+}

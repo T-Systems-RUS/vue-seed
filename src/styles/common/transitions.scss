@@ -1,0 +1,23 @@
+// Vue transition classes
+
+// opacity
+.opacity-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+
+.opacity-enter, .opacity-leave-to {
+  opacity: 0;
+}
+
+
+// fade
+.fade-vertical-enter-active, .fade-leave-active {
+  transition: .2s;
+}
+
+.fade-vertical-enter, .fade-vertical-leave-to {
+  opacity: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}

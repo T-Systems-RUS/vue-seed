@@ -1,21 +1,121 @@
 @import 'variables';
-@import 'mixins';
+// Import Telekom fonts
+@import 'fonts';
 // Override bulma overrides
-@import './bulma-overrides';
+@import 'bulma-overrides';
+
+@import 'common/typography';
+@import 'common/forms';
+@import 'common/table';
+@import 'common/element-spacing';
+@import 'common/transitions';
+@import 'mixins';
 
 body {
+  color: $gray-56;
   font-size: $base-font-size;
 }
 
-.title.is-6 {
-  font-weight: bold;
-  color: $magenta;
+.inner {
+  padding: 0 $building-unit;
+}
+
+a {
+  color: $dark-blue;
+  &:hover {
+    color: $dark-blue;
+    text-decoration: underline;
+  }
+}
+
+.title {
+  color: $gray-56;
+
+  &.is-7 {
+    line-height: 18px;
+  }
+
+  &.is-5 {
+    font-weight: $font-weight-bold;
+  }
+
+  &.is-magenta {
+    @include font-size(7);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    color: $magenta;
+    margin-bottom: $magenta-title-margin-bottom;
+  }
+
+  &.is-grey {
+    @extend .is-magenta;
+    color: $gray-178;
+  }
+
+  @each $font in $font-list {
+    $i: index($font-list, $font);
+
+    &.is-#{$i}-mobile {
+      @include mobile {
+        @include font-size($i)
+      }
+    }
+  }
+
+  &.is-thin {
+    font-weight: $font-weight-thin;
+  }
+
+  &.is-regular {
+    font-weight: $font-weight-regular;
+  }
+
+  &.is-medium {
+    font-weight: $font-weight-medium;
+  }
+
+  &.is-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &.is-ultra {
+    font-weight: $font-weight-ultra;
+  }
+
 }
 
 .centered {
-  @include centered;
+  margin: 0 auto;
 }
 
-.button.is-large {
-  border-color: $magenta-dark;
+// Global page styles
+.page {
+  padding: $page-padding;
+
+  @include mobile {
+    padding: $page-padding-mobile;
+  }
+
+  &.is-main {
+    padding: $main-page-padding;
+  }
+}
+
+.absolute-y-center {
+   @include absolute-y-center;
+ }
+
+.absolute-x-center {
+  @include absolute-x-center;
+}
+
+.absolute-xy-center {
+  @include absolute-xy-center;
+}
+
+.flex-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
