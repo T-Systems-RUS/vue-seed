@@ -1,10 +1,8 @@
-# vue-typescript-seed
+# DEPRECATED
+
+## This seed is now deprecated in favor of Vue CLI 3 based [vue-telekom-seed](https://github.com/T-Systems-RUS/vue-telekom-seed)
 
 > A Vue.js seed project with TypeScript, TS-Jest, Nightwatch and ESlint
-
-**DEPRECATED**
-
-**This seed is now deprecated in favor of Vue CLI 3 based [vue-telekom-seed](https://github.com/T-Systems-RUS/vue-telekom-seed)**
 
 It's highly recommended to use [Yarn](https://yarnpkg.com/en/) for this project 
 
